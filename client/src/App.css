@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+.sign-in-button {
+	margin-right: 5px;
+}
+.sign-up-button {
+	margin-left: 5px;
+}
+.create-link-form-holder {
+	max-width: 65%;
+	margin-top: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.manage-link-table {
+	border-radius: 10px;
+}
+.manage-link-button {
+	margin-right: 20px;
+}
+.bi {
+	margin-bottom: 3px;
+}
+.pagination {
+	margin-top: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link-table-row {
+	border-radius: 10px;
+}
+.card-title {
+	font-weight: bold;
+}
+.three-dot-button {
+	background-color: white;
+	border-radius: 100%;
+}
+.three-dot-button:hover {
+	background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Sign in */
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+	margin-top: 170px;
+}
+.form-signin .checkbox {
+	font-weight: 400;
+}
+.form-signin .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+.form-signin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Sign in */
+
+/* Sign up */
+.form-signup {
+	width: 100%;
+	max-width: 450px;
+	padding: 15px;
+	margin: auto;
+	margin-top: 50px;
+}
+/* Sign up */
+
+@media only screen and (min-width: 600px) {
+	/* For tablets: */
+	.urls-table-holder {
+		margin-top: 100px;
+		max-width: 80%;
+	}
+	.create-link-form-holder {
+		max-width: 80%;
+		margin-top: 100px;
+	}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width: 600px) {
+	/* For mobile phones: */
+	.urls-table-holder {
+		margin-top: 100px;
+		max-width: 100%;
+	}
+	.create-link-form-holder {
+		max-width: 100%;
+		margin-top: 100px;
+	}
 }
