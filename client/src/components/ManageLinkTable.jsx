@@ -231,7 +231,7 @@ function ManageLinkTable() {
 									<div className="d-flex gap-2 w-100 justify-content-between">
 										<div>
 											<h6 className="mb-0 text-break">
-												{`https://freeurl.herokuapp.com/${url.shortUrl}  `}
+												{`freeurl.com/${url.shortUrl}  `}
 												<CopyToClipboard
 													onCopy={() => {
 														setcopied2(true);

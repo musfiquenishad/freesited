@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const customId = require("custom-id");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
-
+const path = require("path");
 const Schema = mongoose.Schema;
 const app = express();
 const port = process.env.PORT || 5000;
