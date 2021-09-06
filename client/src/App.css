@@ -1,3 +1,8 @@
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 .sign-in-button {
 	margin-right: 5px;
 }
@@ -6,81 +11,86 @@
 }
 .create-link-form-holder {
 	max-width: 65%;
-	margin-top: 100px;
+	padding-top: 60px;
 }
 
-.manage-link-table {
-	border-radius: 10px;
-}
-.manage-link-button {
-	margin-right: 20px;
-}
 .bi {
-	margin-bottom: 3px;
-}
-.pagination {
-	margin-top: 100px;
+	margin-bottom: 4px;
 }
 
-.link-table-row {
-	border-radius: 10px;
+.header-avatar {
+	color: white;
 }
-.card-title {
-	font-weight: bold;
+.header-avatar:hover {
+	color: white;
+}
+
+.copy-button {
+	background-color: white;
+
+	border: none;
+}
+.copy-button:hover {
+	background-color: white;
+	color: blue;
+	border: none;
 }
 .three-dot-button {
 	background-color: white;
-	border-radius: 100%;
+
+	border: none;
 }
 .three-dot-button:hover {
 	background-color: white;
 }
 
-/* Sign in */
+/* Modal */
 
-.form-signin {
-	width: 100%;
-	max-width: 330px;
-	padding: 15px;
-	margin: auto;
-	margin-top: 170px;
+.rounded-4 {
+	border-radius: 0.5rem;
 }
-.form-signin .checkbox {
-	font-weight: 400;
+.rounded-5 {
+	border-radius: 0.75rem;
 }
-.form-signin .form-control {
-	position: relative;
-	box-sizing: border-box;
-	height: auto;
-	padding: 10px;
-	font-size: 16px;
-}
-.form-signin .form-control:focus {
-	z-index: 2;
-}
-.form-signin input[type="email"] {
-	margin-bottom: -1px;
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-	margin-bottom: 10px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+.rounded-6 {
+	border-radius: 1rem;
 }
 
-/* Sign in */
-
-/* Sign up */
-.form-signup {
-	width: 100%;
-	max-width: 450px;
-	padding: 15px;
-	margin: auto;
-	margin-top: 50px;
+.modal-sheet .modal-dialog {
+	width: 380px;
+	transition: bottom 0.75s ease-in-out;
 }
-/* Sign up */
+.modal-sheet .modal-footer {
+	padding-bottom: 2rem;
+}
 
+.modal-alert .modal-dialog {
+	width: 380px;
+}
+
+.border-right {
+	border-right: 1px solid #eee;
+}
+
+.modal-tour .modal-dialog {
+	width: 380px;
+}
+
+.list-group {
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+
+.sign-up-holder {
+	margin-top: 90px;
+}
+.sign-in {
+	margin-top: 150px;
+}
+
+.feature-holder {
+	padding-top: 100px;
+}
 @media only screen and (min-width: 600px) {
 	/* For tablets: */
 	.urls-table-holder {
@@ -90,6 +100,10 @@
 	.create-link-form-holder {
 		max-width: 80%;
 		margin-top: 100px;
+	}
+	.list-group {
+		margin-top: 80px;
+		margin-bottom: 100px;
 	}
 }
 
@@ -102,5 +116,9 @@
 	.create-link-form-holder {
 		max-width: 100%;
 		margin-top: 100px;
+	}
+	.list-group {
+		margin-top: 80px;
+		margin-bottom: 100px;
 	}
 }

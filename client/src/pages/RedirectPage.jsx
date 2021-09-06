@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory, Redirect } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function RedirectPage() {
 	let { shortId } = useParams();
@@ -8,21 +8,22 @@ function RedirectPage() {
 	const [urlAvailable, seturlAvailable] = useState(false);
 	const [notfound, setnotfound] = useState(false);
 	const history = useHistory();
-	useEffect(() => {
-		let isMounted = true; // note mutable flag
 
-		axios
-			.get(`api/users/urls/${shortId}`)
-			.then(async (res) => {
-				if (isMounted) {
-					seturl(res.data[0].url);
+	useEffect(() => {
+		let isMounted = true;
+
+		if (isMounted) {
+			axios
+				.get(`api/users/urls/redirect/${shortId}`)
+				.then(async (res) => {
+					seturl(res.data.longUrl);
 					seturlAvailable(true);
-				}
-			})
-			.catch((error) => {
-				setnotfound(true);
-				return <Redirect to="/notfound" />;
-			});
+					return null;
+				})
+				.catch((error) => {
+					setnotfound(true);
+				});
+		}
 		return () => {
 			isMounted = false;
 		};
@@ -31,9 +32,9 @@ function RedirectPage() {
 	if (urlAvailable) {
 		return window.location.replace(url);
 	} else if (notfound) {
-		console.log(notfound);
-		history.push("/notfound");
+		return history.push("/notfound");
 	}
+
 	return <div></div>;
 }
 
