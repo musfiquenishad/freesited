@@ -30,7 +30,10 @@ function Features(props) {
 						<a href="/signup" className="btn btn-warning btn-lg ">
 							Get Started
 						</a>
-						<a href="/signin" className="btn btn-outline-dark btn-lg ">
+						<a
+							href="/signin"
+							className="btn btn-outline-dark btn-lg hide-mobile-view"
+						>
 							Sign In
 						</a>
 					</div>
