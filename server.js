@@ -104,9 +104,10 @@ app.post("/api/users/signup", async (req, res) => {
 
 					res
 						.cookie("token", token, {
-							// sameSite: "strict",
+							sameSite: "strict",
 							httpOnly: true,
-							// secure: true,
+							secure: true,
+							expires: new Date(Date.now() + 31556952000),
 						})
 						.json({
 							name: success.fullname,
@@ -141,9 +142,10 @@ app.post("/api/users/signin", (req, res) => {
 					);
 					res
 						.cookie("token", token, {
-							// sameSite: "strict",
+							sameSite: "strict",
 							httpOnly: true,
-							// secure: true,
+							secure: true,
+							expires: new Date(Date.now() + 31556952000),
 						})
 						.json({
 							name: user.fullname,
@@ -166,7 +168,14 @@ app.post("/api/users/signin", (req, res) => {
 });
 
 app.post("/api/users/signout", (req, res) => {
-	res.cookie("token", "").json({ signedout: true, msg: "User Loged out!" });
+	res
+		.cookie("token", "", {
+			sameSite: "strict",
+			httpOnly: true,
+			secure: true,
+			expires: new Date(Date.now() + 1),
+		})
+		.json({ signedout: true, msg: "User Loged out!" });
 });
 //....................................Check Auth...................................//
 app.get("/api/users/checkauth", (req, res) => {

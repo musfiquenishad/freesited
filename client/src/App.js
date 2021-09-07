@@ -22,6 +22,8 @@ function App() {
 		};
 	}, []);
 
+	var oneYearFromNow = new Date().getFullYear() + 1;
+	console.log(oneYearFromNow);
 	return (
 		<Router>
 			<AuthContext.Provider value={{ user, setuser }}>
