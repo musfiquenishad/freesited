@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "./../components/AuthContext";
+import Headers from "../components/Header";
 
 function SignIn(props) {
 	const { user, setuser } = useContext(AuthContext);
@@ -56,74 +57,76 @@ function SignIn(props) {
 	}
 
 	return (
-		<div className="sign-in">
-			<div className="container">
-				<div
-					className="modal-dialog modal-dialog-centered mt-5"
-					role="document"
-				>
-					<div className="modal-content rounded-5 shadow">
-						<div className="text-center p-5 pb-5 border-bottom-0">
-							<h2 className="fw-bold mb-0 ">Sign In</h2>
-						</div>
+		<Fragment>
+			<Headers />
+			<div className="sign-in">
+				<div className="container">
+					<div
+						className="modal-dialog modal-dialog-centered mt-5"
+						role="document"
+					>
+						<div className="modal-content rounded-5 shadow">
+							<div className="text-center p-5 pb-5 border-bottom-0">
+								<h2 className="fw-bold mb-0 ">Sign In</h2>
+							</div>
 
-						<div className="modal-body p-5 pt-0">
-							<form onSubmit={handleSubmit}>
-								<div className="form-floating mb-3">
-									<input
-										id="signinEmail"
-										type="email"
-										className={`form-control rounded-4 ${validation}`}
-										placeholder="Email address"
-										required
-										value={email}
-										onChange={(event) => {
-											setemail(event.target.value);
-											setvalidation("");
-										}}
-									/>
-									<label htmlFor="signinEmail">Email address</label>
-								</div>
-								<div className="form-floating mb-3">
-									<input
-										type="password"
-										id="signinPassword"
-										className={`form-control rounded-4 ${validation}`}
-										placeholder="Password"
-										required
-										value={password}
-										onChange={(event) => {
-											setpassword(event.target.value);
-											setvalidation("");
-										}}
-									/>
-									<label htmlFor="signinPassword">Password</label>
-									<div className="invalid-feedback mb-3 text-center">
-										Incorrect credentials!
+							<div className="modal-body p-5 pt-0">
+								<form onSubmit={handleSubmit}>
+									<div className="form-floating mb-3">
+										<input
+											id="signinEmail"
+											type="email"
+											className={`form-control rounded-4 ${validation}`}
+											placeholder="Email address"
+											required
+											value={email}
+											onChange={(event) => {
+												setemail(event.target.value);
+												setvalidation("");
+											}}
+										/>
+										<label htmlFor="signinEmail">Email address</label>
 									</div>
-								</div>
+									<div className="form-floating mb-3">
+										<input
+											type="password"
+											id="signinPassword"
+											className={`form-control rounded-4 ${validation}`}
+											placeholder="Password"
+											required
+											value={password}
+											onChange={(event) => {
+												setpassword(event.target.value);
+												setvalidation("");
+											}}
+										/>
+										<label htmlFor="signinPassword">Password</label>
+										<div className="invalid-feedback mb-3 text-center">
+											Incorrect credentials!
+										</div>
+									</div>
 
-								{loading ? (
-									<button
-										className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
-										disabled
-										type="button"
-									>
-										Loading...
-									</button>
-								) : (
-									<button
-										className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
-										type="submit"
-									>
-										Sign In
-									</button>
-								)}
+									{loading ? (
+										<button
+											className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
+											disabled
+											type="button"
+										>
+											Loading...
+										</button>
+									) : (
+										<button
+											className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
+											type="submit"
+										>
+											Sign In
+										</button>
+									)}
 
-								<p className="mt-3 mb-3 text-muted text-center">
-									Don't have an account? <a href="/signup">Sign Up</a>
-								</p>
-								{/* <hr className="my-4" />
+									<p className="mt-3 mb-3 text-muted text-center">
+										Don't have an account? <a href="/signup">Sign Up</a>
+									</p>
+									{/* <hr className="my-4" />
 								<h2 className="fs-5 fw-bold mb-3">Or use a third-party</h2>
 								<button
 									className="w-100 py-2 mb-2 btn btn-outline-info rounded-4"
@@ -173,12 +176,13 @@ function SignIn(props) {
 									</svg>
 									Sign in with GitHub
 								</button> */}
-							</form>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 }
 

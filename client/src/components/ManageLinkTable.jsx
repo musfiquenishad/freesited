@@ -25,6 +25,7 @@ function ManageLinkTable() {
 	const specialCharacters = /[!@#$%^&*()+=[\]{};':"\\|,<>/?]+/;
 	const protocolTest = /^https?:\/\//gi;
 	const [loading, setloading] = useState(false);
+	const [gettingData, setgettingData] = useState(false);
 
 	function validURL(str) {
 		var pattern = new RegExp(
@@ -79,12 +80,14 @@ function ManageLinkTable() {
 	}
 
 	useEffect(() => {
+		setgettingData(true);
 		let isMounted = true;
 		axios
 			.get("api/users/urls", { withCredentials: true })
 			.then((response) => {
 				if (isMounted) {
 					setdata(response.data);
+					setgettingData(false);
 				}
 			})
 			.catch((error) => {
@@ -191,6 +194,7 @@ function ManageLinkTable() {
 					</div>
 				</form>
 			</div>
+
 			{data.length === 0 ? (
 				<div className="text-center mt-5 mb-5">
 					<img className="img-fluid" src={nodata} alt="No data available" />
@@ -217,7 +221,9 @@ function ManageLinkTable() {
 											setshorturlloading(true);
 
 											axios
-												.get(`api/urls/${url._id}`, { withCredentials: true })
+												.get(`api/urls/${url._id}`, {
+													withCredentials: true,
+												})
 												.then((surl) => {
 													setshorturl(surl.data[0].shortUrl);
 													setshorturlloading(false);

@@ -15,8 +15,7 @@ function Features(props) {
 	return (
 		<Fragment>
 			<Header />
-			<div className="p-4"></div>
-			<div className="px-4 pt-5 my-5 text-center border-bottom feature-holder">
+			<div className="px-4 my-5 text-center border-bottom feature-holder">
 				<h1 className="display-4 fw-bold">URL Shortener</h1>
 				<div className="col-lg-6 mx-auto">
 					<p className="lead mb-4">
@@ -26,7 +25,7 @@ function Features(props) {
 						happening with your links - so you know what you can improve and get
 						the highest click-through rate.
 					</p>
-					<div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+					<div className="gap-2 d-sm-flex justify-content-sm-center mb-5">
 						<a href="/signup" className="btn btn-warning btn-lg ">
 							Get Started
 						</a>

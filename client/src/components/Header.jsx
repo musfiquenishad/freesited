@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import logo from "./../Assets/Images/Qiee-white.png";
+import logo from "./../Assets/Images/freesited.png";
 import axios from "axios";
 import { AuthContext } from "./AuthContext";
 
@@ -7,7 +7,7 @@ function Header() {
 	const { user, setuser } = useContext(AuthContext);
 
 	return (
-		<nav className="navbar navbar-light shadow-sm bg-dark fixed-top">
+		<nav className="navbar navbar-light shadow-sm bg-dark">
 			<div className="container">
 				<a className="navbar-brand" href="/">
 					<img
@@ -121,19 +121,7 @@ function Header() {
 							</li>
 						</ul>
 					</div>
-				) : (
-					<ul className="nav ml-auto justify-content-end">
-						<li className="nav-item">
-							<a
-								href="/signin"
-								type="button"
-								className="btn btn-outline-warning btn-sm sign-in-button"
-							>
-								Sign In
-							</a>
-						</li>
-					</ul>
-				)}
+				) : null}
 			</div>
 		</nav>
 	);

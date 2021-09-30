@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, Fragment } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "./../components/AuthContext";
+import Headers from "../components/Header";
 
 function SignUp(props) {
 	const { user, setuser } = useContext(AuthContext);
@@ -66,111 +67,113 @@ function SignUp(props) {
 		}
 	}
 	return (
-		<div className="sign-up-holder">
-			<div className="container ">
-				<div className="modal-dialog" role="document">
-					<div className="modal-content rounded-5 shadow">
-						<div className="p-5 pb-5 border-bottom-0 text-center">
-							<h2 className="fw-bold mb-0 text-center">Sign up for free</h2>
-						</div>
+		<Fragment>
+			<Headers />
+			<div className="sign-up-holder">
+				<div className="container ">
+					<div className="modal-dialog" role="document">
+						<div className="modal-content rounded-5 shadow">
+							<div className="p-5 pb-5 border-bottom-0 text-center">
+								<h2 className="fw-bold mb-0 text-center">Sign up for free</h2>
+							</div>
 
-						<div className="modal-body p-5 pt-0">
-							<form onSubmit={handleSubmit}>
-								<div className="form-floating mb-3">
-									<input
-										type="text"
-										id="fullName"
-										className={`form-control rounded-4 ${nameValidation}`}
-										placeholder="Name"
-										aria-label="Name"
-										onChange={(event) => {
-											setfullname(event.target.value);
-										}}
-										required
-										value={fullname}
-									/>
-									<label htmlFor="fullName">Name</label>
-								</div>
-								<div className="form-floating mb-3">
-									<input
-										id="email"
-										className={`form-control rounded-4 ${emailValidation}`}
-										type="email"
-										placeholder="Email"
-										aria-label="Email"
-										onChange={(event) => {
-											setemail(event.target.value);
-											setemailValidation("");
-										}}
-										required
-										value={email}
-									/>
-									<div className="invalid-feedback">
-										Email already exists in database please use another one or
-										sign in
+							<div className="modal-body p-5 pt-0">
+								<form onSubmit={handleSubmit}>
+									<div className="form-floating mb-3">
+										<input
+											type="text"
+											id="fullName"
+											className={`form-control rounded-4 ${nameValidation}`}
+											placeholder="Name"
+											aria-label="Name"
+											onChange={(event) => {
+												setfullname(event.target.value);
+											}}
+											required
+											value={fullname}
+										/>
+										<label htmlFor="fullName">Name</label>
 									</div>
-									<label htmlFor="email">Email address</label>
-								</div>
-								<div className="form-floating mb-3">
-									<input
-										className={`form-control rounded-4 ${passwordValidation}`}
-										type="password"
-										id="password"
-										placeholder="Password"
-										aria-label="Password"
-										onChange={(event) => {
-											setpassword(event.target.value);
-											setpasswordValidation("");
-										}}
-										required
-										value={password}
-									/>
-									<label htmlFor="password">Password</label>
-								</div>
-								<div className="form-floating mb-3">
-									<input
-										className={`form-control rounded-4 ${passwordValidation}`}
-										type="password"
-										placeholder="Confirm Password"
-										aria-label="Confirm Password"
-										id="confirmPassword"
-										onChange={(event) => {
-											setconfirmPassword(event.target.value);
-											setpasswordValidation("");
-										}}
-										required
-										value={confirmPassword}
-									/>
-									<label htmlFor="confirmPassword">Confirm Password</label>
-									<div className="invalid-feedback">
-										Password and confirm password doesn't match!
+									<div className="form-floating mb-3">
+										<input
+											id="email"
+											className={`form-control rounded-4 ${emailValidation}`}
+											type="email"
+											placeholder="Email"
+											aria-label="Email"
+											onChange={(event) => {
+												setemail(event.target.value);
+												setemailValidation("");
+											}}
+											required
+											value={email}
+										/>
+										<div className="invalid-feedback">
+											Email already exists in database please use another one or
+											sign in
+										</div>
+										<label htmlFor="email">Email address</label>
 									</div>
-								</div>
+									<div className="form-floating mb-3">
+										<input
+											className={`form-control rounded-4 ${passwordValidation}`}
+											type="password"
+											id="password"
+											placeholder="Password"
+											aria-label="Password"
+											onChange={(event) => {
+												setpassword(event.target.value);
+												setpasswordValidation("");
+											}}
+											required
+											value={password}
+										/>
+										<label htmlFor="password">Password</label>
+									</div>
+									<div className="form-floating mb-3">
+										<input
+											className={`form-control rounded-4 ${passwordValidation}`}
+											type="password"
+											placeholder="Confirm Password"
+											aria-label="Confirm Password"
+											id="confirmPassword"
+											onChange={(event) => {
+												setconfirmPassword(event.target.value);
+												setpasswordValidation("");
+											}}
+											required
+											value={confirmPassword}
+										/>
+										<label htmlFor="confirmPassword">Confirm Password</label>
+										<div className="invalid-feedback">
+											Password and confirm password doesn't match!
+										</div>
+									</div>
 
-								{loading ? (
-									<button
-										className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
-										type="button"
-										disabled
-									>
-										Loading...
-									</button>
-								) : (
-									<button
-										className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
-										type="submit"
-									>
-										Sign up
-									</button>
-								)}
+									{loading ? (
+										<button
+											className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
+											type="button"
+											disabled
+										>
+											Loading...
+										</button>
+									) : (
+										<button
+											className="w-100 mb-2 btn btn-lg rounded-4 btn-dark"
+											type="submit"
+										>
+											Sign up
+										</button>
+									)}
 
-								<p className="text-muted text-center">
-									By clicking Sign up, you agree to the terms of use.
-								</p>
-								<p className="mt-3 mb-3 text-muted text-center">
-									Already have an account? <a href="/signin">Sign In</a>
-								</p>
-								{/* <hr className="my-4" />
+									<p className="text-muted text-center">
+										By clicking Sign up, you agree to the terms of use.
+									</p>
+									<p className="mt-3 mb-3 text-muted text-center">
+										Already have an account? <a href="/signin">Sign In</a>
+									</p>
+									{/* <hr className="my-4" />
 								<h2 className="fs-5 fw-bold mb-3 text-center">
 									Or use a third-party
 								</h2>
@@ -225,12 +228,13 @@ function SignUp(props) {
 									{"  "}
 									Sign up with GitHub
 								</button> */}
-							</form>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 }
 
