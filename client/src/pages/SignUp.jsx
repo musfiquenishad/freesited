@@ -167,9 +167,9 @@ function SignUp(props) {
 										</button>
 									)}
 
-									<p className="text-muted text-center">
+									{/* <p className="text-muted text-center">
 										By clicking Sign up, you agree to the terms of use.
-									</p>
+									</p> */}
 									<p className="mt-3 mb-3 text-muted text-center">
 										Already have an account? <a href="/signin">Sign In</a>
 									</p>

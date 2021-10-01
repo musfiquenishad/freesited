@@ -43,7 +43,9 @@ body {
 .three-dot-button:hover {
 	background-color: white;
 }
-
+.notfound-title {
+	color: #212529;
+}
 /* Modal */
 
 .rounded-4 {
@@ -90,6 +92,9 @@ body {
 
 @media only screen and (min-width: 600px) {
 	/* For tablets: */
+	.mobile-view {
+		display: none;
+	}
 	.urls-table-holder {
 		/* margin-top: 100px; */
 		max-width: 80%;
@@ -106,6 +111,9 @@ body {
 
 @media only screen and (max-width: 600px) {
 	/* For mobile phones: */
+	.desktop-view {
+		display: none;
+	}
 	.urls-table-holder {
 		/* margin-top: 100px; */
 		max-width: 100%;

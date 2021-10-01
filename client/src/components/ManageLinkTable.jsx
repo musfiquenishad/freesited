@@ -4,7 +4,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import qr from "./../Assets/Images/qrcode.png";
 import QRCode from "qrcode.react";
 import moment from "moment";
-import nodata from "./../Assets/Images/undraw_No_data_re_kwbl.png";
+import nodata from "./../Assets/Images/3973481.jpg";
 
 function ManageLinkTable() {
 	const [data, setdata] = useState([]);
@@ -195,9 +195,26 @@ function ManageLinkTable() {
 				</form>
 			</div>
 
-			{data.length === 0 ? (
+			{gettingData ? (
+				<div className="d-flex justify-content-center mt-5 pt-5">
+					<div className="spinner-border" role="status">
+						<span className="visually-hidden">Loading...</span>
+					</div>
+				</div>
+			) : data.length === 0 ? (
 				<div className="text-center mt-5 mb-5">
-					<img className="img-fluid" src={nodata} alt="No data available" />
+					<img
+						className="desktop-view "
+						width="auto"
+						height="500"
+						src={nodata}
+						alt="No data available"
+					/>
+					<img
+						className="mobile-view img-fluid"
+						src={nodata}
+						alt="No data available"
+					/>
 				</div>
 			) : (
 				<div className="list-group">
