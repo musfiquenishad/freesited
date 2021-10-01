@@ -47,9 +47,7 @@ function App() {
 					<Route exact path="/" component={Features} />
 					<Route exact path="/signin" component={SignIn} />
 					<Route exact path="/signup" component={SignUp} />
-					<Route exact path="/notfound">
-						<NotFound />
-					</Route>
+
 					<Route exact path="/:shortId">
 						<Redirect />
 					</Route>

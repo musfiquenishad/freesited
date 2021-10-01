@@ -1,14 +1,17 @@
 import React, { Fragment } from "react";
 import notfound from "./../Assets/Images/Monster 404 Error-amico.png";
 import { useHistory } from "react-router-dom";
+import Header from "../components/Header";
 
 function NotFound() {
 	const history = useHistory();
 
 	return (
 		<Fragment>
+			<Header />
+
 			<div className="container">
-				<div className="px-4 py-5 my-5 text-center">
+				<div className="px-4 pb-5 my-5 text-center">
 					<img
 						className="d-block mx-auto mb-4"
 						src={notfound}
