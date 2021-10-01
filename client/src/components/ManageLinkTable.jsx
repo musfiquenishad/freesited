@@ -65,7 +65,7 @@ function ManageLinkTable() {
 					{ withCredentials: true }
 				)
 				.then((res) => {
-					seturl(`https://freeurl.herokuapp.com/${res.data.url.shortUrl}`);
+					seturl(`https://freesited.herokuapp.com/${res.data.url.shortUrl}`);
 					seturlAvailable(true);
 					setloading(false);
 					setdata((prevData) => {
@@ -237,7 +237,7 @@ function ManageLinkTable() {
 									<div className="d-flex gap-2 w-100 justify-content-between">
 										<div>
 											<h6 className="mb-0 text-break">
-												{`freeurl.com/${url.shortUrl}  `}
+												{`freesited.com/${url.shortUrl}  `}
 												<CopyToClipboard
 													onCopy={() => {
 														setcopied2(true);
@@ -246,7 +246,7 @@ function ManageLinkTable() {
 															setcopied2(false);
 														}, 2000);
 													}}
-													text={`https://freeurl.herokuapp.com/${url.shortUrl}`}
+													text={`https://freesited.herokuapp.com/${url.shortUrl}`}
 												>
 													<button className="copy-button ">
 														{copied2 && btnindex === index ? (
@@ -326,7 +326,7 @@ function ManageLinkTable() {
 											>
 												<li>
 													<CopyToClipboard
-														text={`https://freeurl.herokuapp.com/${url.shortUrl}`}
+														text={`https://freesited.herokuapp.com/${url.shortUrl}`}
 													>
 														<button className="dropdown-item">
 															<svg
@@ -608,7 +608,7 @@ function ManageLinkTable() {
 													) : (
 														<QRCode
 															size={270}
-															value={`https://freeurl.herokuapp.com/${shorturl}`}
+															value={`https://freesited.herokuapp.com/${shorturl}`}
 														/>
 													)}
 													<button

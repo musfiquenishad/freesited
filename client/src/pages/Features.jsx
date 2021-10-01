@@ -20,8 +20,8 @@ function Features(props) {
 				<div className="col-lg-6 mx-auto">
 					<p className="lead mb-4">
 						Managing links is even easier using the features available in the
-						dashboard after logging in. Qiee makes link management easier than
-						ever, and advanced analytics allow you to understand what is
+						dashboard after logging in. Freesited makes link management easier
+						than ever, and advanced analytics allow you to understand what is
 						happening with your links - so you know what you can improve and get
 						the highest click-through rate.
 					</p>
@@ -97,10 +97,10 @@ function Features(props) {
 						</h1>
 
 						<p className="lead">
-							QR code QR code generator for each short link QR codes allow you
-							to easily obtain clicks on our links from printed materials,
-							flyers, billboards, etc. In cuttly, we automatically generate a QR
-							code for each shortened link.
+							QR code generator for each short link. QR codes allow you to
+							easily obtain clicks on our links from printed materials, flyers,
+							billboards, etc. In freesited, we automatically generate a QR code
+							for each shortened link.
 						</p>
 					</div>
 				</div>
