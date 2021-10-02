@@ -26,6 +26,7 @@ function ManageLinkTable() {
 	const protocolTest = /^https?:\/\//gi;
 	const [loading, setloading] = useState(false);
 	const [gettingData, setgettingData] = useState(false);
+	const [refresh, setrefresh] = useState(false);
 
 	function validURL(str) {
 		var pattern = new RegExp(
@@ -81,6 +82,7 @@ function ManageLinkTable() {
 
 	useEffect(() => {
 		setgettingData(true);
+
 		let isMounted = true;
 		axios
 			.get("api/users/urls", { withCredentials: true })
@@ -88,6 +90,7 @@ function ManageLinkTable() {
 				if (isMounted) {
 					setdata(response.data);
 					setgettingData(false);
+					setrefresh(false);
 				}
 			})
 			.catch((error) => {
@@ -96,7 +99,7 @@ function ManageLinkTable() {
 		return () => {
 			isMounted = false;
 		};
-	}, [changessaved]);
+	}, [refresh]);
 
 	return (
 		<div className="container">
@@ -451,6 +454,7 @@ function ManageLinkTable() {
 																	setalias("");
 																	setaliasvalidation("");
 																	setchangessaved(false);
+																	setrefresh(true);
 																}}
 															></button>
 														</div>
